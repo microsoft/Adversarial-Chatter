@@ -1,0 +1,15 @@
+<div class="blog-container">
+    <h2>Blog Posts</h2>
+    <div *ngFor="let post of blogPosts" class="blog-post">
+      <h3>{{ post.title }}</h3>
+      <p><strong>By:</strong> {{ post.author }} - <em>{{ post.publish_date }}</em></p>
+      <p>{{ post.content }}</p>
+      <hr />
+    </div>
+  
+    <div class="pagination">
+      <button (click)="changePage(currentPage - 1)" [disabled]="currentPage === 1">Previous</button>
+      <span>Page {{ currentPage }} of {{ Math.ceil(totalPosts / pageSize) }}</span>
+      <button (click)="changePage(currentPage + 1)" [disabled]="currentPage === Math.ceil(totalPosts / pageSize)">Next</button>
+    </div>
+  </div>

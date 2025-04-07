@@ -1,0 +1,12 @@
+.register-container {
+    max-width: 515px;
+    margin: auto; /* Center the container horizontally */
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center;
+    align-items: center;
+    border-radius: 1px;
+    /* background-image: url("../../assets/images/LoginPage/LoginCircle2.png"); */
+    /* margin-top: 10%; */
+    color: rgb(0, 0, 0);
+  }

@@ -1,0 +1,22 @@
+app-banner {
+    display: block;
+    width: 100%;
+  }
+  
+  router-outlet {
+    display: block;
+  }
+
+  .content-wrapper {
+    margin-top: 40px; 
+    padding: 50px; 
+    width:95%;
+    /* padding: 10px; 
+    background-image: url('assets/images/LoginPage/LoginPageFull3.png');
+     background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center; 
+    padding: 50px; 
+    max-width: 100%; */
+
+  }

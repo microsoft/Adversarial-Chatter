@@ -1,0 +1,75 @@
+.login-container {
+  max-width: 515px;
+  margin: 20px auto; /* Center the container horizontally */
+  padding: 20px;
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  justify-content: center;
+  align-items: center;
+  height: 15px;
+  border-radius: 1px;
+  /* background-image: url("../../assets/images/LoginPage/LoginCircle2.png"); */
+  margin-top: 7%; /* Adjust this value to move the login-box higher */
+  color: rgb(0, 0, 0);
+}
+
+.login-title {
+  margin-bottom: 100px; /* Add some space below the title */
+  font-size: 28px;
+  text-align: center;
+  color: rgb(0, 0, 0);
+}
+
+.login-box {
+  padding: 10px;
+  border-radius: 10px;
+  width: 100%; /* Ensure the box takes the full width of the container */
+  margin-bottom: 150px;
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  width: 100px; /* Adjust the width as needed */
+  margin-right: 10px;
+}
+
+.login-box input {
+  flex: 1;
+  padding: 8px;
+  box-sizing: border-box;
+  display: block;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width:80%;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+
+  
+
