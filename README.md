@@ -21,7 +21,7 @@
 >ADV-CHATTER Is a network of learning agents, that are specialized in specific areas of security. The agents are specialized in a particular area of security such as 'Data Exposure', 'Software and website Security', 'Social Engineering.' Between the agents, they are what is being called 'Adverserial Chatter', a way to get insight into the mind, thought process, threat vector generation of an adversary against our own systems, websites, social media platforms. ADV-CHATTER runs against public data to gain insights, but could also be pointed to private data to further demonstrate security issues and flaws. 
 
     ```
-        Note: Project section has a ReadMe on how to install, run and work with each respective project. 
+        Note: Each section has a ReadMe on how to install, run and work with each respective component of the project. 
     ```
 
 
