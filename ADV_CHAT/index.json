@@ -1,0 +1,48 @@
+{
+    "name": "title",
+    "type": "Edm.String",
+    "searchable": true,
+    "filterable": true,
+    "retrievable": true,
+    "stored": true,
+    "sortable": true,
+    "facetable": true,
+    "key": false,
+    "synonymMaps": []
+  },
+  {
+    "name": "author",
+    "type": "Edm.String",
+    "searchable": true,
+    "filterable": true,
+    "retrievable": true,
+    "stored": true,
+    "sortable": true,
+    "facetable": true,
+    "key": false,
+    "synonymMaps": []
+  },
+  {
+    "name": "content",
+    "type": "Edm.String",
+    "searchable": true,
+    "filterable": false,
+    "retrievable": true,
+    "stored": true,
+    "sortable": false,
+    "facetable": true,
+    "key": false,
+    "synonymMaps": []
+  },
+  {
+    "name": "id",
+    "type": "Edm.String",
+    "searchable": true,
+    "filterable": true,
+    "retrievable": true,
+    "stored": true,
+    "sortable": true,
+    "facetable": true,
+    "key": true,
+    "synonymMaps": []
+  }
