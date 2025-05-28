@@ -237,7 +237,7 @@ async def upload_data():
 # # HANDLE USER INTERACTION WITH AGENT
 # # ****************************** #
 async def handle_user_interaction():
-    print("Blog titles have been scraped. You can now ask questions about them.")
+    print("Blog titles have been scraped. You can now ask questions.")
     while True:
         question = input("Ask a question: ")
         if question.lower() in ["exit", "quit"]:
@@ -251,7 +251,7 @@ async def handle_user_interaction():
 
         if result:
             print("Response:", result['response'])
-            print("\nMetrics:", result['metrics'])
+            # print("\nMetrics:", result['metrics'])
             print("\n" + "="*60 + "\n")
 
 
