@@ -7,48 +7,41 @@
 
 
 
-# Projects
-1. ADV_CHAT V.1.0
-* Comprised of multiple LLM Agents, each built for a specific security task.
+# Project
+1. ADV_CHAT 
+* Comprised of an LLM Agent `SocialAgent.py`
 2. Data
 * Scripts to generate fake social media data.
 3. GlitchyWeb
-* Website that will be targeted by the ADV_CHAT Agents
+* Website that will be targeted by the Adversarial Chatter Agents
 
 
 
 ## Description
->ADV-CHATTER Is a network of learning agents, that are specialized in specific areas of security. The agents are specialized in a particular area of security such as 'Data Exposure', 'Software and website Security', 'Social Engineering.' Between the agents, they are what is being called 'Adverserial Chatter', a way to get insight into the mind, thought process, threat vector generation of an adversary against our own systems, websites, social media platforms. ADV-CHATTER runs against public data to gain insights, but could also be pointed to private data to further demonstrate security issues and flaws. 
-
-    ```
-        Note: Each section has a ReadMe on how to install, run and work with each respective component of the project. 
-    ```
+>Adversarial chatter is a project  that explores adversarial behavior in AI or cybersecurity contexts. Currently simulates or analyzes adversarial interactions in the context of elicitation to better train individuals against social engineering threats. 
 
 
-## Agents
-- Agent 1
-- Agent 2
-- Agent 3
+## Agents 
+AutoGen is an open-source programming framework for building AI agents and facilitating cooperation among multiple agents to solve tasks. AutoGen aims to streamline the development and research of agentic AI, much like PyTorch does for Deep Learning. It offers features such as agents capable of interacting with each other, facilitates the use of various large language models (LLMs) and tool use support, autonomous and human-in-the-loop workflows, and multi-agent conversation patterns.
+`https://github.com/microsoft/autogen`
 
 
-
-## Usage
+## Install
 
 
 
 ## Support
+`@DataAI-Consulting-Lab`
 
 
 ## Contributing
-
+```
+    Reach out to the @DataAI-Consulting-Lab if you would like to join our project
+```
 
 
 ## Acknowledgements
-```
-    FED-CIV DAI POD
-    https://github.com/microsoft/autogen
-```
-
-## Release Notes
+* `FED-CIV DAI POD `
+* `@DataAI-Consulting-Lab`
 
 

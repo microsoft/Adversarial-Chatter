@@ -9,11 +9,17 @@ COPY GlitchyWeb/ ./
 # Install the application dependencies
 RUN cd GlitchyWeb && npm install
 
+<<<<<<< HEAD
 # Run the Angular  server and API server
 RUN cd GlitchyWeb && npx ng serve
 
 RUN cd GlitchyWeb/server && npx ng serve
 
+=======
+# Run the Angular  server
+RUN cd GlitchyWeb && npx ng serve
+
+>>>>>>> 24e84fc4734bffafbc0c698ed628b5312ed23314
 # -------- Stage 2: Python Backend + Final Image --------
 FROM python:3.10 AS advchat
 
