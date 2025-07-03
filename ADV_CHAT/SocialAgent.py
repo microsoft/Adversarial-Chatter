@@ -19,7 +19,7 @@ from Tools.Connectors import AzureSearchConnector
 multiprocessing.set_start_method('spawn', force=True)
 from multiprocessing import Process
 from scrapy.crawler import CrawlerProcess
-from azure.identity import DefaultAzureCredential
+from azure.identity import DefaultAzureCredential , ClientSecretCredential
 from azure.keyvault.secrets import SecretClient
 from azure.search.documents import SearchClient
 from azure.search.documents.models import QueryType
@@ -37,23 +37,34 @@ import time
 import json
 import asyncio
 import logging
+import os
 
 # Set logging level to ERROR
 logging.getLogger('scrapy').setLevel(logging.ERROR)
 logging.getLogger('azure').setLevel(logging.ERROR)
 logging.getLogger('autogen').setLevel(logging.ERROR)
 
-# Replace with your Key Vault URL
-key_vault_url = "https://mmgwkv.vault.azure.net/"
+# Key Vault URL
+key_vault_url = os.getenv("KEY_VAULT_URL")
 
 # VARS
 # ****************************** #
 user_memory = ListMemory()
 override_index_name = True
 
+
+# Retrieve them from environment
+tenant_id = os.getenv("AZURE_TENANT_ID")
+client_id = os.getenv("AZURE_CLIENT_ID")
+client_secret = os.getenv("AZURE_CLIENT_SECRET")
+blog_url = os.getenv("GLITCHY_WEB_BLOGS")
+
+
 # SECRET CLIENT
 # ****************************** #
-credential = DefaultAzureCredential()
+# credential = DefaultAzureCredential()
+# Use them to authenticate
+credential = ClientSecretCredential(tenant_id, client_id, client_secret)
 client = SecretClient(vault_url=key_vault_url, credential=credential)
 
 # RAGEVALUATOR
@@ -85,7 +96,7 @@ else:
 # ****************************** #
 class MySocialSpider(scrapy.Spider):
     name = "socialspider"
-    start_urls = ['http://localhost:3000/api/blogs']  # Use the API endpoint
+    start_urls = blog_url  # Use the API endpoint
 
     def __init__(self):
         self.scraped_titles = []
@@ -127,7 +138,6 @@ agent = AssistantAgent(
     memory=[user_memory]  # Pass memory as a list
 )
 
-
 # SEARCH FUNCTIONS
 # ****************************** #
 def get_retrieval_context(query: str) -> str:
@@ -140,8 +150,8 @@ def get_retrieval_context(query: str) -> str:
 
 async def ask_unified_rag(query: str, evaluator: RAGEvaluator):
     """
-    A unified RAG function that combines both document retrieval and weather data
-    based on the query and optional location parameter.
+    A unified RAG function that combines both document retrieval and blog data
+    based on the query.
     
     Args:
         query: The user's question
