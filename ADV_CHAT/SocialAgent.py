@@ -138,6 +138,7 @@ agent = AssistantAgent(
     memory=[user_memory]  # Pass memory as a list
 )
 
+
 # SEARCH FUNCTIONS
 # ****************************** #
 def get_retrieval_context(query: str) -> str:
