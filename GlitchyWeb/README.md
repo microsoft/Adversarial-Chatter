@@ -5,16 +5,10 @@ This project was generated using [Angular CLI](https://github.com/angular/angula
 ## Prerequisites
 
 ```
-1. Download and install VSCode
-2. Download and install latest version of NodeJS and NPM
-4. Download and install following extensions on VSCode
-    1. nodeJS
-    2. Prettier ESLINT
-    3. Standard JS - Javascript Standard Style
-    4. Angular Schematics
+1. Download and install Docker
 ```
 
-## Installing Project
+## Running Docker Container
 
 ```
 1. Download GlitchyWeb Locally
