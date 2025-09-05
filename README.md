@@ -119,11 +119,6 @@ B. Agent
         'docker run --env-file .\.env adversarial-chatter' 
 ```
 
-docker run --env-file C:\Users\mimares\GITHUB\Adversarial-Chatter\.env -d --name adversarial-chatter-container -p 8080:80 adversarial-chatter
-
-docker exec -it adversarial-chatter-container /bin/bash
-```
-
 ## Support
 
 `@DataAI-Consulting-Lab`
