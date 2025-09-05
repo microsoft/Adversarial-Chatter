@@ -12,6 +12,8 @@ https://MM-Dev-Org@dev.azure.com/MM-Dev-Org/DAI-POD/_git/Projects
 
 - ## Psych-Agent
 
+- ## AI-Gen-Practice-Test
+
 ## Adversarial Chatter
 
 **Description:**
@@ -83,9 +85,44 @@ Note: (Not Required) To get the power of AutoGen, with no-code GUI, install the 
 ```
 
 - Docker Install and Run
+
+```text
+1. Download and install Docker. Launch Docker. (No need to create an acount)
+2. Import .env file into root project directory.  i.e. '{YourLocalDirectory}\Adversarial-Chatter'
+3. In terminal navigate to root project directory.
+4. Build Docker Images. Website and Agent can be built separately
+```
+
+```text
+A. Website  
+    1. In terminal run,
+
+        'docker build -f Dockerfile.glitchyweb -t adversarial-chatter-web . '  
+
+    2. Under the Docker Image section you should now see an Image for 'adversarial-chatter-web.' 
+    3. In Terminal you can run. 
+
+        'docker run --env-file .\.env -d --name adversarial-chatter-web-container -p 4200:4200 adversarial-chatter-web  ' 
+
+    You should now be able to navigate out to 'http://localhost:4200/' in your browser to view the website. 
+```
+
+```text
+B. Agent
+    1. In terminal run  
+
+        'docker build -f Dockerfile.adv-chat -t adversarial-chatter . '  
+
+    2. Under the Docker Image section you should now see an Image for 'adversarial-chatter.' 
+    3. You can select your newly created image in docker and select 'Run' or in terminal you can run. 
+
+        'docker run --env-file .\.env adversarial-chatter' 
+```
+
 docker run --env-file C:\Users\mimares\GITHUB\Adversarial-Chatter\.env -d --name adversarial-chatter-container -p 8080:80 adversarial-chatter
 
 docker exec -it adversarial-chatter-container /bin/bash
+```
 
 ## Support
 
