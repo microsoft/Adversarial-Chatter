@@ -1,0 +1,22 @@
+# -------- Stage 1: Build Angular Frontend --------
+FROM node:23.3.0 AS glitchyweb
+
+WORKDIR /app/GlitchyWeb
+
+# Copy frontend source code
+COPY GlitchyWeb/ ./
+
+# Install the application dependencies
+RUN npm install
+
+# Copy health check script
+COPY healthcheck.sh /usr/local/bin/healthcheck.sh
+RUN chmod +x /usr/local/bin/healthcheck.sh
+
+HEALTHCHECK --interval=10s --timeout=5s --retries=3 CMD /usr/local/bin/healthcheck.sh
+
+# Expose ports (adjust as needed)
+EXPOSE 3000 4000 4200
+
+# Start both Angular and API servers
+CMD ["bash", "-c", "npx ng serve --host 0.0.0.0 --port 4200 & node server/server.js"]
