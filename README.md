@@ -1,47 +1,136 @@
-## Prerequisites
+# Adversarial Chatter Projects
 
 1. Clone Repo
-    ```
-        https://MM-Dev-Org@dev.azure.com/MM-Dev-Org/DAI-POD/_git/Projects
-    ```
 
+```text
+https://MM-Dev-Org@dev.azure.com/MM-Dev-Org/DAI-POD/_git/Projects
+```
 
+## Table of Contents
 
-# Project
-1. ADV_CHAT 
-* Comprised of an LLM Agent `SocialAgent.py`
-2. Data
-* Scripts to generate fake social media data.
-3. GlitchyWeb
-* Website that will be targeted by the Adversarial Chatter Agents
+- ## Adversarial-Chatter
 
+- ## Psych-Agent
 
+- ## AI-Gen-Practice-Test
 
-## Description
->Adversarial chatter is a project  that explores adversarial behavior in AI or cybersecurity contexts. Currently simulates or analyzes adversarial interactions in the context of elicitation to better train individuals against social engineering threats. 
+## Adversarial Chatter
 
+**Description:**
+Adversarial chatter is a project  that explores adversarial behavior in AI or cybersecurity contexts. FakBlogsAI simulates fake blog data and SocialAgent analyzes blog data from the context of elicitation to better train individuals against social engineering threats.
 
-## Agents 
-AutoGen is an open-source programming framework for building AI agents and facilitating cooperation among multiple agents to solve tasks. AutoGen aims to streamline the development and research of agentic AI, much like PyTorch does for Deep Learning. It offers features such as agents capable of interacting with each other, facilitates the use of various large language models (LLMs) and tool use support, autonomous and human-in-the-loop workflows, and multi-agent conversation patterns.
-`https://github.com/microsoft/autogen`
+**Tech Stack:**
+Python, Angular, Azure Search, Autogen
 
+**Install and Run:**
 
-## Install
+- Manual Install
 
+```text
+1. Download and install VSCode
+2. Download and install Python => 3.10
+3. Download and install Python Extensions. 
+    a."Python Debugger"
+    b. "Python - Language Support"
+    c. "Pylance"
+4. install requirements file.  "pip install -r ADV_CHAT\requirements.txt"
 
+Note: (Not Required) To get the power of AutoGen, with no-code GUI, install the AutogenStudio
+    a.  pip install -U "autogenstudio"
+
+5. Copy SocialAgent.py onto a local directory
+
+6. Download GlitchyWeb Locally
+    Note: 
+        Make sure that there is no node_modules or package-lock.json, in either the root or server directory.
+        If these exists you will need to run the command below in the GlitchyWeb directory from a PowerShell terminal  
+        as admin. 
+
+        Remove-Item -Recurse -Force .\node_modules, .\package-lock.json
+
+        Remove-Item -Recurse -Force .\server\node_modules, .\server\package-lock.json
+
+7. cd  to "GlitchyWeb" in terminal
+    
+    Run: npm install 
+
+8. cd to "GlitchyWeb\server"  in terminal
+
+    Run: npm install 
+```
+
+- Manual Run
+
+```text
+1. Launch three terminals
+2. First terminal, cd \GlitchyWeb
+    Run:  npx ng serve
+3. Second terminal, cd \GlitchyWeb\server
+    Run: node server.js
+    Note: Once the server is running, open your browser and navigate to `http://localhost:4200/`.
+
+4. Third Terminal, cd {Directory Containing Social Agent Script}
+    Run: python AdversarialChatterAgent.py
+5. You can now run prompts in the third terminal, examples included below.
+    
+    Prompt Examples: 
+    
+    "if someone where to socially engineer one of these individuals, from the information gleaned 
+    what would be an approach, who would that be, what  method would you use and why?"
+
+    "How could {Person Mentioned} defend against the previously identified weaknesses?"
+
+    "Can you create a list of how {Person Mentioned} could defend and train against the previously identified weaknesses?"
+
+```
+
+- Docker Install and Run
+
+```text
+1. Download and install Docker. Launch Docker. (No need to create an acount)
+2. Import .env file into root project directory.  i.e. '{YourLocalDirectory}\Adversarial-Chatter'
+3. In terminal navigate to root project directory.
+4. Build Docker Images. Website and Agent can be built separately
+```
+
+```text
+A. Website  
+    1. In terminal run,
+
+        'docker build -f Dockerfile.glitchyweb -t adversarial-chatter-web . '  
+
+    2. Under the Docker Image section you should now see an Image for 'adversarial-chatter-web.' 
+    3. In Terminal you can run. 
+
+        'docker run --env-file .\.env -d --name adversarial-chatter-web-container -p 4200:4200 adversarial-chatter-web  ' 
+
+    You should now be able to navigate out to 'http://localhost:4200/' in your browser to view the website. 
+```
+
+```text
+B. Agent
+    1. In terminal run  
+
+        'docker build -f Dockerfile.adv-chat -t adversarial-chatter . '  
+
+    2. Under the Docker Image section you should now see an Image for 'adversarial-chatter.' 
+    3. You can select your newly created image in docker and select 'Run' or in terminal you can run. 
+
+        'docker run --env-file .\.env adversarial-chatter' 
+```
 
 ## Support
+
 `@DataAI-Consulting-Lab`
 
-
 ## Contributing
-```
+
+```text
     Reach out to the @DataAI-Consulting-Lab if you would like to join our project
 ```
 
-
 ## Acknowledgements
-* `FED-CIV DAI POD `
-* `@DataAI-Consulting-Lab`
 
+- `FED-CIV DAI POD`
 
+- `@DataAI-Consulting-Lab`

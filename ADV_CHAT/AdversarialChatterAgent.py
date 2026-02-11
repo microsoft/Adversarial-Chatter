@@ -73,24 +73,38 @@ evaluator = RAGEvaluator()
 
 # KEYS, SECRETS
 # ****************************** #
-open_ai_endpoint = client.get_secret("mmgwoaiendpoint").value
-open_ai_deployment = client.get_secret("mmgwaoaideployment").value
-open_ai_key = client.get_secret("mmgwoaikey").value
-open_ai_api = client.get_secret("mmgwoaiapi").value
-blob_key = client.get_secret("mmgwblobkey").value
-blob_connection_string = client.get_secret("mmgwblobconnection").value
-azure_search = client.get_secret("mmgwaisname").value
-azure_search_endpoint = client.get_secret("mmgwaisendpoint").value
-azure_search_key = client.get_secret("mmgwaiskey").value
-azure_search_config = client.get_secret("mmgwazuresearchconfig").value
-server_name = client.get_secret("mmgwsqlserver").value
-db_name = client.get_secret("mmgwsqldbname").value
+open_ai_endpoint = os.getenv("mmgwoaiendpoint")
+open_ai_deployment = os.getenv("mmgwaoaideployment")
+open_ai_key = os.getenv("mmgwoaikey")
+open_ai_api = os.getenv("mmgwoaiapi")
+blob_key = os.getenv("mmgwblobkey")
+blob_connection_string = os.getenv("mmgwblobconnection")
+azure_search = os.getenv("mmgwaisname")
+azure_search_endpoint = os.getenv("mmgwaisendpoint")
+azure_search_key = os.getenv("mmgwaiskey")
+azure_search_config = os.getenv("mmgwazuresearchconfig")
+
+# open_ai_endpoint = client.get_secret("mmgwoaiendpoint").value
+# open_ai_deployment = client.get_secret("mmgwaoaideployment").value
+# open_ai_key = client.get_secret("mmgwoaikey").value
+# open_ai_api = client.get_secret("mmgwoaiapi").value
+# blob_key = client.get_secret("mmgwblobkey").value
+# blob_connection_string = client.get_secret("mmgwblobconnection").value
+# azure_search = client.get_secret("mmgwaisname").value
+# azure_search_endpoint = client.get_secret("mmgwaisendpoint").value
+# azure_search_key = client.get_secret("mmgwaiskey").value
+# azure_search_config = client.get_secret("mmgwazuresearchconfig").value
 
 # Possibly override index name
 if override_index_name:
     azure_search_index = "glitchy-web-index"
 else:
-    azure_search_index = client.get_secret("mmgwaisindex").value
+    azure_search_index = os.getenv("mmgwaisindex").value
+
+# if override_index_name:
+#     azure_search_index = "glitchy-web-index"
+# else:
+#     azure_search_index = client.get_secret("mmgwaisindex").value
 
 # WEBSCRAPER
 # ****************************** #

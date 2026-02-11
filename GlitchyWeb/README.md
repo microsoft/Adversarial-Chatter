@@ -2,49 +2,12 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.1.
 
-## Prerequisites
+## Description
 
 ```
-1. Download and install Docker
+Fake website with fake blogs, used for testing Agents.  
 ```
 
-## Running Docker Container
-
-```
-1. Download GlitchyWeb Locally
-    Note: 
-        Make sure that there is no node_modules or package-lock.json, in either the root or server directory.
-        If these exists you will need to run the command below in the GlitchyWeb directory from a PowerShell terminal  
-        as admin. 
-
-        Remove-Item -Recurse -Force .\node_modules, .\package-lock.json
-
-        Remove-Item -Recurse -Force .\server\node_modules, .\server\package-lock.json
-
-2. cd  to "GlitchyWeb" in terminal
-    
-    Run: npm install 
-
-3. cd to "GlitchyWeb\server"  in terminal
-
-    Run: npm install 
-```
-
-
-## Running Project
-
-To run GlitchyWeb Locally, follow the steps below. You'll need two instances of terminal open, 
-one for each command below. 
-
-
-```
-1. First terminal, cd /GlitchyWeb
-    Run:  npx ng serve
-2. Second terminal, cd /GlitchyWeb/server
-    Run: node server.js
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
 ## Code scaffolding
 

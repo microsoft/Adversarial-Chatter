@@ -1,25 +1,26 @@
 # -------- Stage 1: Build Angular Frontend --------
 FROM node:23.3.0 AS glitchyweb
 
-WORKDIR /app/glitchyweb
+WORKDIR /app/GlitchyWeb
 
 # Copy frontend source code
 COPY GlitchyWeb/ ./
 
 # Install the application dependencies
-RUN cd GlitchyWeb && npm install
+RUN npm install
 
-<<<<<<< HEAD
-# Run the Angular  server and API server
-RUN cd GlitchyWeb && npx ng serve
+# Copy health check script
+COPY healthcheck.sh /usr/local/bin/healthcheck.sh
+RUN chmod +x /usr/local/bin/healthcheck.sh
 
-RUN cd GlitchyWeb/server && npx ng serve
+HEALTHCHECK --interval=10s --timeout=5s --retries=3 CMD /usr/local/bin/healthcheck.sh
 
-=======
-# Run the Angular  server
-RUN cd GlitchyWeb && npx ng serve
+# Expose ports (adjust as needed)
+EXPOSE 3000 4000
 
->>>>>>> 24e84fc4734bffafbc0c698ed628b5312ed23314
+# Start both Angular and API servers
+CMD ["bash", "-c", "npx ng serve & node server/server.js"]
+
 # -------- Stage 2: Python Backend + Final Image --------
 FROM python:3.10 AS advchat
 
@@ -52,4 +53,4 @@ HEALTHCHECK --interval=10s --timeout=5s --retries=3 CMD /usr/local/bin/healthche
 EXPOSE 3000 4000
 
 # Run backend script
-CMD ["./venv/bin/python", "ADV_CHAT/SocialAgent.py"]
+CMD ["./venv/bin/python", "ADV_CHAT/AdversarialChatterAgent.py"]
