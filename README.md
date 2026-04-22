@@ -129,9 +129,6 @@ B. Agent
     Reach out to the @DataAI-Consulting-Lab if you would like to join our project
 ```
 
-## Demo
-https://microsoft-my.sharepoint.com/personal/mimares_microsoft_com/_layouts/15/stream.aspx?id=%2Fpersonal%2Fmimares%5Fmicrosoft%5Fcom%2FDocuments%2FVideos%2FClipchamp%2FAdversarial%20Chatter%20Demo%201%201%2FExports%2FAdversarial%20Chatter%20Demo%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E10364dae%2D0cea%2D4d07%2D8a49%2D6003868beebc
-
 ## Acknowledgements
 
 - `FED-CIV DAI POD`
